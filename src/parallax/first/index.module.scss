@@ -1,0 +1,50 @@
+.parallax1 {
+  display: grid;
+  grid-template-columns: 1fr 470px 470px 1fr;
+  grid-template-rows: 1fr auto 1fr;
+  align-items: center;
+  transform-style: preserve-3d;
+  min-height: calc(100vh - 90px);
+}
+
+.left {
+  /* the formula is scale(min) = 1 +- (40-1)/300 = ~0.866 */
+  transform: translateZ(40px) scale(0.866);
+  transform-origin: right;
+  grid-area: 2 / 2 / 2 / 2;
+
+  h1 {
+    font-size: 4.8rem;
+    font-weight: 500;
+    text-align: right;
+    letter-spacing: 1px;
+    line-height: 1.1;
+  }
+}
+
+.right {
+  grid-area: 2 / 3 / 2 / 3;
+  margin-left: -50px;
+
+  .backgroundImage {
+    opacity: 0.7;
+    height: 400px;
+    width: 470px;
+    background-image: url("/background.png");
+    background-size: cover;
+    background-position: center center;
+    filter: grayscale(70%);
+  }
+}
+
+.frontImage {
+  width: 130px;
+  grid-area: 2 / 3 / 2 / 3;
+  transform: translateZ(20px) scale(0.933);
+  /* the formula is (wrapper-img/2 - front-img/2) + 23px compensate translateZ */
+  margin-left: calc((400px / 2) - (130px / 2) + 23px - 50px);
+
+  img {
+    width: 100%;
+  }
+}
