@@ -2,6 +2,7 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  font-size: 1.2rem;
 
   /* color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -13,30 +14,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@font-face {
-  font-family: "Poppins";
-  src: url("./fonts/poppins-regular-webfont.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
+body {
+  margin: 0;
 }
 
-@font-face {
-  font-family: "Poppins";
-  src: url("./fonts/poppins-bold-webfont.woff2") format("woff2");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("./fonts/poppins-semibold-webfont.woff2") format("woff2");
+a {
+  color: black;
   font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("./fonts/poppins-light-webfont.woff2") format("woff2");
-  font-weight: 300; /* or 'light' */
-  font-style: normal;
 }
