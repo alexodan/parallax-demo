@@ -1,0 +1,19 @@
+.Navbar {
+  display: flex;
+  height: 70px;
+  padding: 10px 100px;
+  align-items: center;
+  .Navbar-logo {
+    flex: 1;
+  }  
+  .Navbar-menu {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex: 2;
+    justify-content: space-around;
+  }
+  .menu-item {
+    margin: 0;
+  }
+}
