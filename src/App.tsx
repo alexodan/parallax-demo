@@ -1,15 +1,23 @@
-import "./App.css";
-import Navbar from "./navbar";
+import "./App.scss";
+import { Link, Route } from "wouter";
 import Parallax1 from "./parallax/first";
 
-function App() {
-  return (
-    <div className="App">
-      <Navbar />
-      <Parallax1 />
-      <Parallax1 />
-    </div>
-  );
-}
+const App = () => (
+  <div className="App">
+    <Route
+      path="/"
+      component={() => {
+        return (
+          <div className="Home">
+            <Link className="link" to="/parallax/1">
+              First challenge
+            </Link>
+          </div>
+        );
+      }}
+    />
+    <Route path="/parallax/1" component={() => <Parallax1 />} />
+  </div>
+);
 
 export default App;
