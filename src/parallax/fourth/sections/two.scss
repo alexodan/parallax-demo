@@ -1,0 +1,85 @@
+// Remove This Hidden Later
+.bottom {
+  visibility: hidden;
+}
+
+// Animation
+.two {
+  .fade-in {
+    transform: translateX(-200px);
+    opacity: 0;
+    transition-duration: 1s;
+    transition-property: transform, opacity;
+    transition-timing-function: linear;
+  }
+  .fade-in-slower {
+    transform: translateX(200px);
+    opacity: 0;
+    transition-delay: 0.3s;
+    transition-duration: 1s;
+    transition-property: transform, opacity;
+    transition-timing-function: linear;
+  }
+  .show {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+// General Styles
+.two {
+  display: grid;
+  grid-template-rows: 350px 350px;
+  justify-content: center;
+  min-height: 100vh;
+  color: white;
+  padding: 100px;
+  gap: 40px;
+  background: linear-gradient(
+    180deg,
+    rgb(63, 107, 191) 0%,
+    rgb(42, 96, 156) 95%,
+    rgb(57, 102, 151) 100%
+  );
+}
+
+.top {
+  display: flex;
+  &-left {
+    flex: 6;
+    display: flex;
+    justify-content: end;
+  }
+  &-right {
+    flex: 4;
+  }
+}
+
+.bottom {
+  display: flex;
+  text-align: right;
+  &-left {
+    flex: 4;
+  }
+  &-right {
+    flex: 6;
+  }
+}
+
+.top,
+.bottom {
+  gap: 30px;
+  img {
+    width: 520px;
+    border-radius: 6px;
+  }
+  h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  p {
+    font-size: 1.1rem;
+    max-width: 32ch;
+  }
+}
