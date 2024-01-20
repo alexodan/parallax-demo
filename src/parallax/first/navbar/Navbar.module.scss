@@ -1,0 +1,22 @@
+.navbar {
+  display: flex;
+  height: 70px;
+  padding: 10px 100px;
+  align-items: center;
+  
+  &Logo {
+    flex: 1;
+  }  
+  
+  &Menu {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex: 2;
+    justify-content: space-around;
+    
+    &Item {
+      margin: 0;
+    }
+  }
+}
