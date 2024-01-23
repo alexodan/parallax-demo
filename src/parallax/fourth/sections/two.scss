@@ -1,24 +1,31 @@
 // Remove This Hidden Later
-.bottom {
-  visibility: hidden;
-}
+// .bottom {
+//   visibility: hidden;
+// }
 
 // Animation
 .two {
-  .fade-in {
+  .top-left,
+  .bottom-left {
     transform: translateX(-200px);
-    opacity: 0;
-    transition-duration: 1s;
-    transition-property: transform, opacity;
-    transition-timing-function: linear;
   }
-  .fade-in-slower {
+  .top-right,
+  .bottom-right {
     transform: translateX(200px);
+  }
+  .top-right,
+  .bottom-left {
+    transition-delay: 0.5s;
+  }
+  .fade-in {
+    // transform: translateX(var(--translate-x));
     opacity: 0;
-    transition-delay: 0.3s;
     transition-duration: 1s;
     transition-property: transform, opacity;
-    transition-timing-function: linear;
+    transition-timing-function: ease-in-out;
+  }
+  .text {
+    transition-delay: 0.9s;
   }
   .show {
     transform: translateX(0px);
@@ -33,14 +40,14 @@
   justify-content: center;
   min-height: 100vh;
   color: white;
-  padding: 100px;
-  gap: 40px;
+  padding: 20px;
   background: linear-gradient(
     180deg,
     rgb(63, 107, 191) 0%,
     rgb(42, 96, 156) 95%,
     rgb(57, 102, 151) 100%
   );
+  // linear-gradient(0deg, rgb(255, 244, 227) 0%, rgb(3 55 113) 100%);
 }
 
 .top {
@@ -70,7 +77,7 @@
 .bottom {
   gap: 30px;
   img {
-    width: 520px;
+    height: 300px;
     border-radius: 6px;
   }
   h2 {
