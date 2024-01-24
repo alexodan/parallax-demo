@@ -1,6 +1,6 @@
-import { useEffect } from "react";
-// import styles from "./card.scss";
 import "./card.scss";
+// import styles from "./card.scss";
+import { useEffect } from "react";
 
 const AirBalloonCard = ({
   id,
@@ -20,23 +20,13 @@ const AirBalloonCard = ({
       root: null,
       rootMargin: "0px 0px 0px 0px",
     };
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // it's ackshually supposed to be just one entry
-        entries.forEach((entry) => {
-          console.log("card");
-          if (entry.isIntersecting) {
-            entry.target.classList.add("inView");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        ...observerOptions,
-        threshold: 0,
-        // threshold: threshold / 100,
+    const observer = new IntersectionObserver(([entry]) => {
+      // it's ackshually supposed to be just one entry
+      if (entry.isIntersecting) {
+        entry.target.classList.add("inView");
+        observer.unobserve(entry.target);
       }
-    );
+    }, observerOptions);
 
     const card = document.querySelector(`[data-id="${id}"]`) as HTMLElement;
     if (card) {
