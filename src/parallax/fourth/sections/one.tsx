@@ -1,10 +1,10 @@
-import "./one.scss";
-import "../button.scss";
+import styles from "./one.module.scss";
+import btnStyles from "../button.module.scss";
 
 const Section1 = () => {
   return (
-    <section className="one">
-      <div className="left">
+    <section className={styles.one}>
+      <div className={styles.left}>
         <h1>
           Air <br />
           balloon <br />
@@ -14,9 +14,9 @@ const Section1 = () => {
           Some text saying something about how awesome air balloon flights are
           and that you should try it sometime, or maybe something else idk
         </p>
-        <button className="btn">Order now!</button>
+        <button className={btnStyles.btn}>Order now!</button>
       </div>
-      <div className="right">
+      <div className={styles.right}>
         <img src="/assets/p1/air-balloon1.png" />
       </div>
     </section>

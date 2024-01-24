@@ -1,29 +1,29 @@
 // Animation
 .two {
-  .top-left,
-  .bottom-left {
+  .topLeft,
+  .bottomLeft {
     transform: translateX(-200px);
   }
-  .top-right,
+  .topRight,
   .bottom-right {
     transform: translateX(200px);
   }
-  .top-right,
-  .bottom-left {
+  .topRight,
+  .bottomLeft {
     transition-delay: 0.5s;
   }
-  p.top-right,
-  p.bottom-left {
+  p.topRight,
+  p.bottomLeft {
     transition-delay: 0.9s;
   }
-  .fade-in {
-    // transform: translateX(var(--translate-x));
+  .fadeIn {
     opacity: 0;
-    transition-duration: 1s;
+    transition-duration: 0.2s;
     transition-property: transform, opacity;
     transition-timing-function: ease-in-out;
   }
   .show {
+    transition-duration: 1s;
     transform: translateX(0px);
     opacity: 1;
   }
@@ -32,11 +32,11 @@
 // General Styles
 .two {
   display: grid;
-  grid-template-rows: 350px 350px;
+  grid-template-rows: 50% 50%;
+  gap: 30px;
   justify-content: center;
-  min-height: 100vh;
   color: white;
-  padding: 20px;
+  padding: 10vw 0;
   background: linear-gradient(
     180deg,
     rgb(63, 107, 191) 0%,
@@ -48,12 +48,12 @@
 
 .top {
   display: flex;
-  &-left {
+  &Left {
     flex: 6;
     display: flex;
     justify-content: end;
   }
-  &-right {
+  &Right {
     flex: 4;
   }
 }
@@ -61,10 +61,10 @@
 .bottom {
   display: flex;
   text-align: right;
-  &-left {
+  &Left {
     flex: 4;
   }
-  &-right {
+  &Right {
     flex: 6;
   }
 }
@@ -73,8 +73,8 @@
 .bottom {
   gap: 30px;
   img {
-    height: 300px;
     border-radius: 6px;
+    width: max(30vw, 400px);
   }
   h2 {
     font-size: 2rem;

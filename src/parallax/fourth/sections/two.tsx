@@ -1,71 +1,83 @@
-import "./two.scss";
-import { useFadeIn } from "../../useFadeIn";
+import styles from "./two.module.scss";
+import { useIntersectionObserver } from "../../useIntersectionObserver";
 import { useRef } from "react";
 
 const observerOptions = {
   root: null,
   rootMargin: "0px 0px 0px 0px",
-  threshold: 0.5,
+  threshold: 0.3,
 };
 
 const Section2 = () => {
-  const { ref: topLeft, isInViewport: isTopLeftInScreen } = useFadeIn(
+  // Should the useRef be inside the hook? why/why not
+  // The only reason I thought of is the user _might_ want to handle the ref for
+  // something else, so it is a bit more open to accept a ref than creating one.
+  const top = useIntersectionObserver(
     useRef<HTMLDivElement>(null),
     observerOptions
   );
-  const { ref: topRight, isInViewport: isTopRightInScreen } = useFadeIn(
-    useRef<HTMLDivElement>(null),
-    observerOptions
-  );
-  const { ref: bottomLeft, isInViewport: isBotLeftInScreen } = useFadeIn(
-    useRef<HTMLDivElement>(null),
-    observerOptions
-  );
-  const { ref: bottomRight, isInViewport: isBotRightInScreen } = useFadeIn(
+  const bottom = useIntersectionObserver(
     useRef<HTMLDivElement>(null),
     observerOptions
   );
 
   return (
-    <section className="two">
-      <div className="top">
+    <section className={styles.two}>
+      <div className={styles.top} ref={top.ref}>
         <div
-          ref={topLeft}
-          className={`top-left fade-in ${isTopLeftInScreen && "show"}`}
-          data-id="top-left"
+          className={`${styles.topLeft} ${styles.fadeIn} ${
+            top.isFirstShown && styles.show
+          }`}
         >
           <img loading="lazy" src="/assets/p2/left2.jpg" />
         </div>
-        <div ref={topRight} data-id="top-right">
-          <h2 className={`top-right fade-in ${isTopRightInScreen && "show"}`}>
+        <div ref={top.ref}>
+          <h2
+            className={`${styles.topRight} ${styles.fadeIn} ${
+              top.isFirstShown && styles.show
+            }`}
+          >
             Air <br />
             balloons <br />
             festivals
           </h2>
-          <p className={`top-right fade-in ${isTopRightInScreen && "show"}`}>
+          <p
+            className={`${styles.topRight} ${styles.fadeIn} ${
+              top.isFirstShown && styles.show
+            }`}
+          >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
             rerum minima illo fuga, beatae sunt voluptates consequatur totam
             laudantium.
           </p>
         </div>
       </div>
-      <div className="bottom">
-        <div ref={bottomLeft} data-id="bottom-left">
-          <h2 className={`bottom-left fade-in ${isBotLeftInScreen && "show"}`}>
+      <div className={styles.bottom}>
+        <div ref={bottom.ref}>
+          <h2
+            className={`${styles.bottomLeft} ${styles.fadeIn} ${
+              bottom.isFirstShown && styles.show
+            }`}
+          >
             About <br />
             air balloons
             <br /> safety
           </h2>
-          <p className={`bottom-left fade-in ${isBotLeftInScreen && "show"}`}>
+          <p
+            className={`${styles.bottomLeft} ${styles.fadeIn} ${
+              bottom.isFirstShown && styles.show
+            }`}
+          >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
             rerum minima illo fuga, beatae sunt voluptates consequatur totam
             laudantium.
           </p>
         </div>
         <div
-          ref={bottomRight}
-          className={`bottom-right fade-in ${isBotRightInScreen && "show"}`}
-          data-id="bottom-right"
+          ref={bottom.ref}
+          className={`${styles.bottomRight} ${styles.fadeIn} ${
+            bottom.isFirstShown && styles.show
+          }`}
         >
           <img loading="lazy" src="/assets/p2/right2.jpg" />
         </div>

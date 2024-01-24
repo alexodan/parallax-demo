@@ -1,38 +1,36 @@
-import "./three.scss";
+import styles from "./three.module.scss";
 import AirBalloonCard from "../card";
-import { useEffect } from "react";
+import { useRef } from "react";
 import { cards } from "./constants";
+import { useIntersectionObserver } from "../../useIntersectionObserver";
+
+const observerOptions = {
+  root: null,
+  threshold: 0,
+  rootMargin: "0px 0px -250px 0px",
+};
 
 const Section3 = () => {
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      threshold: 0,
-      rootMargin: "0px 0px -250px 0px",
-    };
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          console.log("title visible");
-          entry.target.classList.add("titleInView");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    const elements = document.querySelectorAll(".titleFadeIn");
-    elements.forEach((element) => {
-      observer.observe(element);
-    });
-  }, []);
+  const title = useIntersectionObserver(
+    useRef<HTMLDivElement>(null),
+    observerOptions
+  );
 
   return (
-    <section className="section3">
-      <h2 className="titleFadeIn">Flight vouchers</h2>
-      <p className="titleFadeIn">
+    <section className={styles.section3}>
+      <h2
+        ref={title.ref}
+        className={`${styles.fadeIn} ${title.isFirstShown && styles.show}`}
+      >
+        Flight vouchers
+      </h2>
+      <p
+        ref={title.ref}
+        className={`${styles.fadeIn} ${title.isFirstShown && styles.show}`}
+      >
         Some text about how awesome hot air balloons are, probably
       </p>
-      <div className="section3Gallery">
+      <div className={styles.section3Gallery}>
         {cards.map((c, idx) => (
           <AirBalloonCard key={idx + 1} id={idx + 1} {...c} />
         ))}
