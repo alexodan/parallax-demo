@@ -1,9 +1,7 @@
 .navbar {
   background: rgb(143, 183, 228);
   display: flex;
-  height: 70px;
-  padding: 10px 100px;
-  padding-top: 20px;
+  padding: 10px 0;
 
   &Menu {
     align-items: center;
@@ -15,7 +13,7 @@
 
     &Logo img {
       flex: 1;
-      width: 3vw;
+      width: 2vw;
       filter: invert(1);
     }
     &Item {
