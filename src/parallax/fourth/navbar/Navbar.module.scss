@@ -1,23 +1,30 @@
 .navbar {
-    display: flex;
-    height: 70px;
-    padding: 10px 100px;
+  background: rgb(143, 183, 228);
+  display: flex;
+  height: 70px;
+  padding: 10px 100px;
+  padding-top: 20px;
+
+  &Menu {
     align-items: center;
-    
-    &Logo {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex: 2;
+    justify-content: center;
+
+    &Logo img {
       flex: 1;
-    }  
-    
-    &Menu {
-      list-style: none;
+      width: 3vw;
+      filter: invert(1);
+    }
+    &Item {
       margin: 0;
-      display: flex;
-      flex: 2;
-      justify-content: space-around;
-      
-      &Item {
-        margin: 0;
-      }
+      margin: 0 40px;
+    }
+    &Item a {
+      color: white;
+      text-decoration: none;
     }
   }
-  
+}

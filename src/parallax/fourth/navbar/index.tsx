@@ -6,21 +6,21 @@ export default function Navbar() {
     <nav className={styles.navbar}>
       <ul className={styles.navbarMenu}>
         <li className={styles.navbarMenuItem}>
-          <Link to="/">About</Link>
+          <Link to="/">Order</Link>
         </li>
         <li className={styles.navbarMenuItem}>
-          <Link to="/">Products & Offering</Link>
+          <Link to="/">Locations</Link>
         </li>
-        <li>
-          <Link to="/" className={styles.navbarLogo}>
-            Home
+        <li className={styles.navbarMenuLogo}>
+          <Link to="/">
+            <img src="/assets/p4/air-balloon-icon.png" alt="Logo" />
           </Link>
         </li>
         <li className={styles.navbarMenuItem}>
-          <Link to="/">Space & Design</Link>
+          <Link to="/">Galleries</Link>
         </li>
         <li className={styles.navbarMenuItem}>
-          <Link to="/">English / Spanish</Link>
+          <Link to="/">About</Link>
         </li>
       </ul>
     </nav>
