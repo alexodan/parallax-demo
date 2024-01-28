@@ -5,7 +5,7 @@
     transform: translateX(-200px);
   }
   .topRight,
-  .bottom-right {
+  .bottomRight {
     transform: translateX(200px);
   }
   .topRight,
@@ -39,11 +39,10 @@
   padding: 10vw 0;
   background: linear-gradient(
     180deg,
-    rgb(63, 107, 191) 0%,
+    rgb(87 117 173),
     rgb(42, 96, 156) 95%,
     rgb(57, 102, 151) 100%
   );
-  // linear-gradient(0deg, rgb(255, 244, 227) 0%, rgb(3 55 113) 100%);
 }
 
 .top {
@@ -85,4 +84,8 @@
     font-size: 1.1rem;
     max-width: 32ch;
   }
+}
+
+.uNewline {
+  display: block;
 }

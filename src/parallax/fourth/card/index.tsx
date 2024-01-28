@@ -20,7 +20,7 @@ const AirBalloonCard = ({
 }) => {
   const cardRef = useIntersectionObserver(useRef<HTMLDivElement>(null), {
     ...observerOptions,
-    threshold: 0.2,
+    threshold: 0,
   });
 
   return (
@@ -28,10 +28,14 @@ const AirBalloonCard = ({
       ref={cardRef.ref}
       style={{ "--push-down": `${threshold * 3}px` } as CSSProperties}
       className={`${styles.card} ${styles.fadeIn} ${
-        cardRef.isFirstShown && styles.show
+        cardRef.isInViewport && styles.show
       }`}
     >
-      <img className={styles.img} src={`/assets/p4/card${id}.png`} />
+      <img
+        className={styles.img}
+        src={`/assets/p4/card${id}.png`}
+        alt={`hot air balloon number ${id}`}
+      />
       <figcaption>
         <h3>{title}</h3>
         <p>{description}</p>

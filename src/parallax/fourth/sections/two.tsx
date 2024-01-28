@@ -9,9 +9,6 @@ const observerOptions = {
 };
 
 const Section2 = () => {
-  // Should the useRef be inside the hook? why/why not
-  // The only reason I thought of is the user _might_ want to handle the ref for
-  // something else, so it is a bit more open to accept a ref than creating one.
   const top = useIntersectionObserver(
     useRef<HTMLDivElement>(null),
     observerOptions
@@ -26,24 +23,32 @@ const Section2 = () => {
       <div className={styles.top} ref={top.ref}>
         <div
           className={`${styles.topLeft} ${styles.fadeIn} ${
-            top.isFirstShown && styles.show
+            top.hasShown && styles.show
           }`}
         >
-          <img loading="lazy" src="/assets/p2/left2.jpg" />
+          <img
+            loading="lazy"
+            src="/assets/p2/left2.jpg"
+            alt="photo of many air balloons"
+          />
         </div>
         <div ref={top.ref}>
           <h2
+            role="heading"
+            aria-level={2}
             className={`${styles.topRight} ${styles.fadeIn} ${
-              top.isFirstShown && styles.show
+              top.hasShown && styles.show
             }`}
           >
-            Air <br />
-            balloons <br />
+            Air
+            <span className={styles.uNewline}></span>
+            balloons
+            <span className={styles.uNewline}></span>
             festivals
           </h2>
           <p
             className={`${styles.topRight} ${styles.fadeIn} ${
-              top.isFirstShown && styles.show
+              top.hasShown && styles.show
             }`}
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
@@ -55,17 +60,21 @@ const Section2 = () => {
       <div className={styles.bottom}>
         <div ref={bottom.ref}>
           <h2
+            role="heading"
+            aria-level={2}
             className={`${styles.bottomLeft} ${styles.fadeIn} ${
-              bottom.isFirstShown && styles.show
+              bottom.hasShown && styles.show
             }`}
           >
-            About <br />
+            About
+            <span className={styles.uNewline}></span>
             air balloons
-            <br /> safety
+            <span className={styles.uNewline}></span>
+            safety
           </h2>
           <p
             className={`${styles.bottomLeft} ${styles.fadeIn} ${
-              bottom.isFirstShown && styles.show
+              bottom.hasShown && styles.show
             }`}
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
@@ -76,10 +85,14 @@ const Section2 = () => {
         <div
           ref={bottom.ref}
           className={`${styles.bottomRight} ${styles.fadeIn} ${
-            bottom.isFirstShown && styles.show
+            bottom.hasShown && styles.show
           }`}
         >
-          <img loading="lazy" src="/assets/p2/right2.jpg" />
+          <img
+            loading="lazy"
+            src="/assets/p2/right2.jpg"
+            alt="photo of an air balloon deflating"
+          />
         </div>
       </div>
     </section>

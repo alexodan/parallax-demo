@@ -7,10 +7,11 @@ export default function Parallax1() {
       <Navbar />
       <section className={styles.parallax1}>
         <div className={styles.left}>
-          <h1>
-            Explore <br />
+          <h1 role="heading" aria-level={1}>
+            Explore
+            <span className={styles.uNewline}></span>
             new ways
-            <br />
+            <span className={styles.uNewline}></span>
             to garden
           </h1>
         </div>
@@ -18,16 +19,17 @@ export default function Parallax1() {
           <div className={styles.backgroundImage}></div>
         </div>
         <div className={styles.frontImage}>
-          <img src="/front.png" />
+          <img src="/front.png" alt="front image" />
         </div>
       </section>
       {/* Duplicating content just to showcase the parallax */}
       <section className={styles.parallax1}>
         <div className={styles.left}>
-          <h1>
-            Explore <br />
+          <h1 role="heading" aria-level={1}>
+            Explore
+            <span className={styles.uNewline}></span>
             new ways
-            <br />
+            <span className={styles.uNewline}></span>
             to garden
           </h1>
         </div>
@@ -35,7 +37,7 @@ export default function Parallax1() {
           <div className={styles.backgroundImage}></div>
         </div>
         <div className={styles.frontImage}>
-          <img src="/front.png" />
+          <img src="/front.png" alt="front image" />
         </div>
       </section>
     </>
