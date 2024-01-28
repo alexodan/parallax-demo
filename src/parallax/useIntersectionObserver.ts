@@ -11,13 +11,13 @@ export function useIntersectionObserver<T>(
   observerOptions: Options
 ) {
   const [isInViewport, setIsInViewPort] = useState(false);
-  const [isFirstShown, setIsFirstShown] = useState(false);
+  const [hasShown, setHasShown] = useState(false);
 
   useEffect(() => {
     const obs = new IntersectionObserver(([entry]) => {
       setIsInViewPort(entry.isIntersecting);
       if (entry.isIntersecting) {
-        setIsFirstShown(true);
+        setHasShown(true);
       }
     }, observerOptions);
 
@@ -28,5 +28,5 @@ export function useIntersectionObserver<T>(
     };
   }, [ref, observerOptions]);
 
-  return { ref, isInViewport, isFirstShown };
+  return { ref, isInViewport, hasShown };
 }

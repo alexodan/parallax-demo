@@ -7,7 +7,7 @@ import { useIntersectionObserver } from "../../useIntersectionObserver";
 const observerOptions = {
   root: null,
   threshold: 0,
-  rootMargin: "0px 0px -250px 0px",
+  rootMargin: "0px 0px -150px 0px",
 };
 
 const Section3 = () => {
@@ -20,13 +20,13 @@ const Section3 = () => {
     <section className={styles.section3}>
       <h2
         ref={title.ref}
-        className={`${styles.fadeIn} ${title.isFirstShown && styles.show}`}
+        className={`${styles.fadeIn} ${title.hasShown && styles.show}`}
       >
         Flight vouchers
       </h2>
       <p
         ref={title.ref}
-        className={`${styles.fadeIn} ${title.isFirstShown && styles.show}`}
+        className={`${styles.fadeIn} ${title.hasShown && styles.show}`}
       >
         Some text about how awesome hot air balloons are, probably
       </p>
