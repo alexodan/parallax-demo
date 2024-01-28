@@ -4,7 +4,7 @@ import Parallax1 from "./parallax/first";
 import Parallax4 from "./parallax/fourth";
 
 const App = () => (
-  <div className={styles.app}>
+  <main className={styles.app}>
     <Route
       path="/"
       component={() => {
@@ -23,7 +23,7 @@ const App = () => (
     />
     <Route path="/parallax/1" component={() => <Parallax1 />} />
     <Route path="/parallax/4" component={() => <Parallax4 />} />
-  </div>
+  </main>
 );
 
 export default App;
