@@ -13,7 +13,8 @@ export default function Navbar() {
         </li>
         <li className={styles.navbarMenuLogo}>
           <Link to="/">
-            <img src="/assets/p4/air-balloon-icon.png" alt="Logo" />{""}
+            <img src="/assets/p4/air-balloon-icon.png" alt="Logo" />
+            {""}
           </Link>
         </li>
         <li className={styles.navbarMenuItem}>
