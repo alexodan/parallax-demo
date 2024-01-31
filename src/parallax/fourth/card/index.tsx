@@ -33,7 +33,7 @@ const AirBalloonCard = ({
     >
       <img
         className={styles.img}
-        src={`/assets/p4/card${id}.png`}
+        src={`/parallax-demo/assets/p4/card${id}.png`}
         alt={`hot air balloon number ${id}`}
       />
       <figcaption>

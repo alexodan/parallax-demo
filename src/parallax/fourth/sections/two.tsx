@@ -28,7 +28,7 @@ const Section2 = () => {
         >
           <img
             loading="lazy"
-            src="/assets/p2/left2.jpg"
+            src="/parallax-demo/assets/p2/left2.jpg"
             alt="photo of many air balloons"
           />
         </div>
@@ -90,7 +90,7 @@ const Section2 = () => {
         >
           <img
             loading="lazy"
-            src="/assets/p2/right2.jpg"
+            src="/parallax-demo/assets/p2/right2.jpg"
             alt="photo of an air balloon deflating"
           />
         </div>

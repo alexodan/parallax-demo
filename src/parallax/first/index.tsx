@@ -19,7 +19,7 @@ export default function Parallax1() {
           <div className={styles.backgroundImage}></div>
         </div>
         <div className={styles.frontImage}>
-          <img src="/front.png" alt="front image" />
+          <img src="/parallax-demo/front.png" alt="front image" />
         </div>
       </section>
       {/* Duplicating content just to showcase the parallax */}
@@ -37,7 +37,7 @@ export default function Parallax1() {
           <div className={styles.backgroundImage}></div>
         </div>
         <div className={styles.frontImage}>
-          <img src="/front.png" alt="front image" />
+          <img src="/parallax-demo/front.png" alt="front image" />
         </div>
       </section>
     </>

@@ -6,23 +6,23 @@ import Parallax4 from "./parallax/fourth";
 const App = () => (
   <main className={styles.app}>
     <Route
-      path="/"
+      path="/parallax-demo"
       component={() => {
         return (
           <div>
-            <Link className="link" to="/parallax/1">
+            <Link className="link" to="/parallax-demo/parallax/1">
               First challenge
             </Link>
             <br />
-            <Link className="link" to="/parallax/4">
+            <Link className="link" to="/parallax-demo/parallax/4">
               Fourth challenge
             </Link>
           </div>
         );
       }}
     />
-    <Route path="/parallax/1" component={() => <Parallax1 />} />
-    <Route path="/parallax/4" component={() => <Parallax4 />} />
+    <Route path="/parallax-demo/parallax/1" component={() => <Parallax1 />} />
+    <Route path="/parallax-demo/parallax/4" component={() => <Parallax4 />} />
   </main>
 );
 

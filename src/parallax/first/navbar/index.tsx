@@ -4,24 +4,24 @@ import { Link } from "wouter";
 export default function Navbar() {
   return (
     <nav className={styles.navbar}>
-      <Link to="/" className={styles.navbarLogo}>
+      <Link to="/parallax-demo" className={styles.navbarLogo}>
         Home
       </Link>
       <ul className={styles.navbarMenu}>
         <li className={styles.navbarMenuItem}>
-          <Link to="/">About</Link>
+          <Link to="/parallax-demo">About</Link>
         </li>
         <li className={styles.navbarMenuItem}>
-          <Link to="/">Products & Offering</Link>
+          <Link to="/parallax-demo">Products & Offering</Link>
         </li>
         <li className={styles.navbarMenuItem}>
-          <Link to="/">Space & Design</Link>
+          <Link to="/parallax-demo">Space & Design</Link>
         </li>
         <li className={styles.navbarMenuItem}>
-          <Link to="/">-</Link>
+          <Link to="/parallax-demo">-</Link>
         </li>
         <li className={styles.navbarMenuItem}>
-          <Link to="/">English / Spanish</Link>
+          <Link to="/parallax-demo">English / Spanish</Link>
         </li>
       </ul>
     </nav>

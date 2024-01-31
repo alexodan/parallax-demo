@@ -19,7 +19,10 @@ const Section1 = () => {
         <button className={btnStyles.btn}>Order now!</button>
       </div>
       <div className={styles.right}>
-        <img src="/assets/p1/air-balloon1.png" alt="a hot air balloon" />
+        <img
+          src="/parallax-demo/assets/p1/air-balloon1.png"
+          alt="a hot air balloon"
+        />
       </div>
     </section>
   );
