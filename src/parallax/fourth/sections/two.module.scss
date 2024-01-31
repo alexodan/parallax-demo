@@ -1,0 +1,91 @@
+// Animation
+.two {
+  .topLeft,
+  .bottomLeft {
+    transform: translateX(-200px);
+  }
+  .topRight,
+  .bottomRight {
+    transform: translateX(200px);
+  }
+  .topRight,
+  .bottomLeft {
+    transition-delay: 0.5s;
+  }
+  p.topRight,
+  p.bottomLeft {
+    transition-delay: 0.9s;
+  }
+  .fadeIn {
+    opacity: 0;
+    transition-duration: 0.2s;
+    transition-property: transform, opacity;
+    transition-timing-function: ease-in-out;
+  }
+  .show {
+    transition-duration: 1s;
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+// General Styles
+.two {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  gap: 30px;
+  justify-content: center;
+  color: white;
+  padding: 10vw 0;
+  background: linear-gradient(
+    180deg,
+    rgb(87 117 173),
+    rgb(42, 96, 156) 95%,
+    rgb(57, 102, 151) 100%
+  );
+}
+
+.top {
+  display: flex;
+  &Left {
+    flex: 6;
+    display: flex;
+    justify-content: end;
+  }
+  &Right {
+    flex: 4;
+  }
+}
+
+.bottom {
+  display: flex;
+  text-align: right;
+  &Left {
+    flex: 4;
+  }
+  &Right {
+    flex: 6;
+  }
+}
+
+.top,
+.bottom {
+  gap: 30px;
+  img {
+    border-radius: 6px;
+    width: max(30vw, 400px);
+  }
+  h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  p {
+    font-size: 1.1rem;
+    max-width: 32ch;
+  }
+}
+
+.uNewline {
+  display: block;
+}
